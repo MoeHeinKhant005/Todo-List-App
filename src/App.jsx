@@ -1,6 +1,8 @@
 function App() {
   return (
-    <h2 className="text-primary font-lexend text-3xl">Hello World</h2>
+    <div className="w-full h-screen bg-primary flex flex-row justify-center items-center">
+      
+    </div>
   )
 }
 
