@@ -6,11 +6,10 @@ const TodoList = () => {
     const [todoData, setTodoData] = useContext(TodoContext);
 
     function handleCheck(event, id){
+        event.target.disabled = true;
+        event.target.nextElementSibling.classList.remove('text-slate-900');
+        event.target.nextElementSibling.classList.add('text-gray-400');
         event.target.nextElementSibling.classList.add('line-through');
-        setTimeout(() => {
-            const updatedData = todoData.filter(todo => todo.id !== id);
-            setTodoData(updatedData);
-        }, 5000);
     }
 
     function handleDelete(id){
