@@ -7,12 +7,14 @@ const TodoForm = () => {
     const todoInputRef = createRef();
 
     function handleAdd(){
-        const newTodo = {
-            task: todoInputRef.current.value,
-            id: todoData.length + 1
-        };
-        setTodoData([...todoData, newTodo]);
-        todoInputRef.current.value = ""
+        if(todoInputRef.current.value !== ""){
+            const newTodo = {
+                task: todoInputRef.current.value,
+                id: todoData.length + 1
+            };
+            setTodoData([...todoData, newTodo]);
+            todoInputRef.current.value = "";
+        }
     }
 
     return (
@@ -20,7 +22,7 @@ const TodoForm = () => {
             <input 
             type="text"
             ref={todoInputRef}
-            placeholder="Enter a new task..."
+            placeholder="Add a new task..."
             className="w-4/5 h-[50px] bg-slate-100 text-slate-800 font-dm-sans text-sm rounded-s px-5 border-none outline-none"
             />
             <button className="w-1/5 h-[50px] bg-primary text-white rounded-e" onClick={handleAdd}>
