@@ -1,4 +1,10 @@
+import { useContext } from 'react'; 
+import { TodoContext } from '../App';
+
 const TodoList = () => {
+
+    const [todoData, setTodoData] = useContext(TodoContext);
+
     return (
         <div className="w-[85%] h-auto max-h-[300px] flex flex-col justify-start items-center gap-y-2 overflow-y-auto">
             <div className="todo-item w-full h-[50px] bg-white flex flex-none flex-row justify-between items-center gap-x-2 px-4">

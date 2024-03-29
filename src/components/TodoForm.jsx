@@ -1,4 +1,10 @@
+import { useContext } from 'react'; 
+import { TodoContext } from '../App';
+
 const TodoForm = () => {
+
+    const [todoData, setTodoData] = useContext(TodoContext);
+
     return (
         <div className="w-[85%] h-auto flex flex-row justify-center items-center">
             <input 
