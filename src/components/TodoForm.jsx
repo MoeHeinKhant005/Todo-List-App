@@ -11,7 +11,7 @@ const TodoForm = () => {
             task: todoInputRef.current.value,
             id: todoData.length + 1
         };
-        setTodoData([...todoData], newTodo);
+        setTodoData([...todoData, newTodo]);
         todoInputRef.current.value = ""
     }
 
